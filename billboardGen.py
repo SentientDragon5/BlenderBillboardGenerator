@@ -33,11 +33,8 @@ def render_top(output_dir, output_file_pattern_string = 'render%d.jpg', subject 
     bpy.context.scene.render.filepath = os.path.join(output_dir, (output_file_pattern_string % 'bottom'))
     bpy.ops.render.render(write_still = True)
 
-
-
-#bpy.context.scene.display.shading.light = 'MATCAP'
-#rotate_and_render('/Users/lshehane/Downloads/BlenderProjects/BillboardGen/', 'rendernormal%d.jpg', 4)
-#bpy.context.scene.display.shading.light = 'FLAT'
+# run
+# change this part to edit
 subject = bpy.context.object
-rotate_and_render('/Users/lshehane/Downloads/BlenderProjects/BillboardGen/', subject.name + '_%d.png', 4, subject)
-top_and_render('/Users/lshehane/Downloads/BlenderProjects/BillboardGen/', subject.name + '_%s.png', subject, True)
+render_sides('Your path', subject.name + '_%d.png', 4, subject)
+render_top('Your path', subject.name + '_%s.png', subject, True)
